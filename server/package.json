@@ -1,0 +1,68 @@
+{
+  "name": "prismagram",
+  "version": "1.0.0",
+  "repository": "git@github.com:Artak-Mkrtchyan/prismagram.git",
+  "author": "Artak-Mkrtchyan <30382535+Artak-Mkrtchyan@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^3.3.0",
+    "apollo-server-core": "^3.4.0",
+    "apollo-server-express": "^3.4.0",
+    "aws-sdk": "^2.1000.0",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.6.1",
+    "graphql-tools": "^4.0.4",
+    "husky": "^7.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "merge-graphql-schemas": "^1.7.6",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.3",
+    "multer-s3": "^2.9.0",
+    "nodemailer": "^6.4.6",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/morgan": "^1.9.3",
+    "@types/multer": "^1.4.7",
+    "@types/multer-s3": "^2.7.10",
+    "@types/node": "^16.11.4",
+    "@types/passport": "^1.0.7",
+    "@types/passport-jwt": "^3.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "nodemon": "^2.0.13",
+    "prettier": "2.4.1",
+    "prisma": "^3.3.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "prisma": "prisma",
+    "deploy": "prisma deploy",
+    "generate": "prisma generate",
+    "dev": "nodemon --exec NODE_PATH=./ ts-node --project ./tsconfig.json --files src/server.ts",
+    "tsc": "tsc",
+    "lint": "eslint src/**/*.ts --fix",
+    "ts-node": "ts-node"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}
