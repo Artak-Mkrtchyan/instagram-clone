@@ -8,7 +8,10 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { createStackNavigator } from '@react-navigation/stack';
 
 import {
-    PhotoParamList, PhotoTabNavigationRoutes, stackStyles, UploadPhotoNavigationRoutes
+  PhotoParamList,
+  PhotoTabNavigationRoutes,
+  stackStyles,
+  UploadPhotoNavigationRoutes,
 } from './config';
 
 const MaterialTopTabNavigator = createMaterialTopTabNavigator();

@@ -3,7 +3,8 @@ import { ScrollView } from 'react-native';
 import { Loader } from 'src/components/Loader';
 import { ProfileComponent } from 'src/components/Profile';
 import {
-    ProfileScreenRouteParamList, ProfileScreenStackProp
+  ProfileScreenRouteParamList,
+  ProfileScreenStackProp,
 } from 'src/screens/BottomTabs/Profile/types';
 
 import { useQuery } from '@apollo/client';

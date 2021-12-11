@@ -1,4 +1,9 @@
-import { ApolloClient, createHttpLink, InMemoryCache, makeVar } from '@apollo/client';
+import {
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+  makeVar,
+} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 export const TOKEN = 'TOKEN';

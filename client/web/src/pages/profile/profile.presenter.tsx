@@ -8,7 +8,16 @@ import { Loader } from 'src/components/loader';
 import { SquarePost } from 'src/components/square-post';
 
 import {
-    Bio, Count, Counts, FullName, Header, HeaderColumn, Posts, Username, UsernameRow, Wrapper
+  Bio,
+  Count,
+  Counts,
+  FullName,
+  Header,
+  HeaderColumn,
+  Posts,
+  Username,
+  UsernameRow,
+  Wrapper,
 } from './profile.styles';
 import { Props } from './types';
 

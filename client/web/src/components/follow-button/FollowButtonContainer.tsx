@@ -23,5 +23,4 @@ const FollowButtonContainer = ({ isFollowing, id }) => {
   return <FollowButtonPresenter onClick={onClick} isFollowing={isFollowingS} />;
 };
 
-
 export default FollowButtonContainer;

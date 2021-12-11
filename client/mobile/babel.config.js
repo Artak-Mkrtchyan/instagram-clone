@@ -3,20 +3,20 @@ module.exports = function (api) {
   return {
     plugins: [
       [
-        "module-resolver",
+        'module-resolver',
         {
-          root: ["."],
-          extensions: [".ios.js", ".android.js", ".js", ".ts", ".tsx", ".json"],
+          root: ['.'],
+          extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
           alias: {
-            "components/*": ["components/"],
-            "constants/*": ["constants/"],
-            "navigation/*": ["navigation/"],
-            "screens/*": ["screens/"],
-            "hooks/*": ["hooks/"],
+            'components/*': ['components/'],
+            'constants/*': ['constants/'],
+            'navigation/*': ['navigation/'],
+            'screens/*': ['screens/'],
+            'hooks/*': ['hooks/'],
           },
         },
       ],
     ],
-    presets: ["babel-preset-expo"],
+    presets: ['babel-preset-expo'],
   };
 };

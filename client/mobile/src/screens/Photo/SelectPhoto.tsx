@@ -5,7 +5,9 @@ import { PERMISSIONS, request } from 'react-native-permissions';
 import { Loader } from 'src/components/Loader';
 import { constants } from 'src/constants/constants';
 import {
-    PhotoTabNavigationRoutes, UploadPhotoNavigationRoutes, UploadPhotoParamList
+  PhotoTabNavigationRoutes,
+  UploadPhotoNavigationRoutes,
+  UploadPhotoParamList,
 } from 'src/navigation/config';
 import { colors } from 'src/styles';
 import styled from 'styled-components/native';

@@ -1,5 +1,7 @@
 import {
-	BottomTabNavigationRoutes, BottomTabStackParamList, CommonNavigationRoutes
+  BottomTabNavigationRoutes,
+  BottomTabStackParamList,
+  CommonNavigationRoutes,
 } from 'src/navigation/config';
 
 import { RouteProp } from '@react-navigation/native';
@@ -9,10 +11,7 @@ type ParamList = {
   [CommonNavigationRoutes.DETAIL]: { readonly id: string };
 };
 
-export type DetailRouteParamList = RouteProp<
-  ParamList,
-  CommonNavigationRoutes.DETAIL
->;
+export type DetailRouteParamList = RouteProp<ParamList, CommonNavigationRoutes.DETAIL>;
 
 export type DetailStackParamList = {
   [CommonNavigationRoutes.DETAIL]: undefined;

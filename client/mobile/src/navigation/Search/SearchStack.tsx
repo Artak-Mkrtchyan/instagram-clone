@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Platform } from 'react-native';
 import { SearchBar } from 'src/components/SearchBar';
 import {
-    BottomTabNavigationRoutes, BottomTabStackParamList, stackStyles
+  BottomTabNavigationRoutes,
+  BottomTabStackParamList,
+  stackStyles,
 } from 'src/navigation/config';
 import { SearchScreen } from 'src/screens/BottomTabs/Search';
 import { DetailScreen } from 'src/screens/Detail';

@@ -1,6 +1,9 @@
 import React from 'react';
 import {
-    KeyboardTypeOptions, NativeSyntheticEvent, ReturnKeyTypeOptions, TextInputEndEditingEventData
+  KeyboardTypeOptions,
+  NativeSyntheticEvent,
+  ReturnKeyTypeOptions,
+  TextInputEndEditingEventData,
 } from 'react-native';
 import { constants } from 'src/constants/constants';
 import styled from 'styled-components/native';

@@ -4,7 +4,9 @@ import { ActivityIndicator, Alert, Image } from 'react-native';
 import { constants } from 'src/constants/constants';
 import { useInput } from 'src/hooks/useInput';
 import {
-    MainNavigationRoutes, PhotoParamList, UploadPhotoNavigationRoutes
+  MainNavigationRoutes,
+  PhotoParamList,
+  UploadPhotoNavigationRoutes,
 } from 'src/navigation/config';
 import { FEED_QUERY } from 'src/screens/BottomTabs/Home';
 import { colors } from 'src/styles';
