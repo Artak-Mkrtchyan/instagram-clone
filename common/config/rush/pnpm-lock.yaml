@@ -16,6 +16,7 @@ specifiers:
   '@testing-library/react': ^12.1.2
   '@testing-library/user-event': ^13.5.0
   '@types/bcrypt': ^5.0.0
+  '@types/express': ^4.17.13
   '@types/morgan': ^1.9.3
   '@types/multer': ^1.4.7
   '@types/multer-s3': ^2.7.10
@@ -105,6 +106,7 @@ dependencies:
   '@testing-library/react': 12.1.2
   '@testing-library/user-event': 13.5.0
   '@types/bcrypt': 5.0.0
+  '@types/express': 4.17.13
   '@types/morgan': 1.9.3
   '@types/multer': 1.4.7
   '@types/multer-s3': 2.7.11
@@ -27022,7 +27024,7 @@ packages:
   file:projects/instagram-server.tgz_370d13597731945d3fea200ee12ff4a6:
     resolution:
       {
-        integrity: sha512-7VvW/PrrOBytmbXIfmnO5bSpJvBnALVTfi4ordjHBk+yP1FM6OB1Mt0yUWgJHYG/n40SUbAiXcL/xn7cR6NXLQ==,
+        integrity: sha512-vCWpW152o7l/XAhdCO2i9hRG6yklaSWyKCUb6RSU/pQhOvSJjdRAwCOzTgsottf5tu871OzuEO/Mb8nl6BkPEg==,
         tarball: file:projects/instagram-server.tgz,
       }
     id: file:projects/instagram-server.tgz
@@ -27031,6 +27033,7 @@ packages:
     dependencies:
       '@prisma/client': 3.6.0_prisma@3.6.0
       '@types/bcrypt': 5.0.0
+      '@types/express': 4.17.13
       '@types/morgan': 1.9.3
       '@types/multer': 1.4.7
       '@types/multer-s3': 2.7.11

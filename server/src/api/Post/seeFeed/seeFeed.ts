@@ -1,5 +1,5 @@
-import { isAuthenticated } from 'src/middlewares';
 import { Context } from 'src/context';
+import { isAuthenticated } from 'src/middlewares';
 
 export const resolvers = {
   Query: {
@@ -22,7 +22,7 @@ export const resolvers = {
           where: {
             user: {
               id: {
-                in: [...following.map((follower) => follower.id), user.id],
+                in: [...following.map((follower: any) => follower.id), user.id],
               },
             },
           },

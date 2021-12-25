@@ -21,6 +21,27 @@
 
       // This will invoke common/autoinstallers/rush-prettier/node_modules/.bin/pretty-quick
       "shellCommand": "pretty-quick --staged"
+    },
+    {
+      "name": "start:client:web",
+      "commandKind": "global",
+      "summary": "Start the web-app project",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "cd client/web && rushx start"
+    },
+    {
+      "name": "start:client:mobile",
+      "commandKind": "global",
+      "summary": "Start the mobile-second-app project",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "cd client/mobile && rushx start"
+    },
+    {
+      "name": "start:server",
+      "commandKind": "global",
+      "summary": "Start the react-second-app project",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "cd server && rushx start"
     }
     // {
     //   /**

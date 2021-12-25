@@ -1,5 +1,5 @@
-import bcrypt from 'bcrypt';
 import { UserInputError } from 'apollo-server-errors';
+import bcrypt from 'bcrypt';
 import { Context } from 'src/context';
 import { generateToken } from 'src/utils';
 
