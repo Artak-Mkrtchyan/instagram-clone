@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import { Avatar } from 'src/components/avatar';
 import { FatText } from 'src/components/fat-text';
 import {
-  CommentEmpty as CommentIcon,
-  HeartEmpty,
-  HeartFull,
-} from 'src/components/ui/elements/icons';
+    CommentEmpty as CommentIcon, HeartEmpty, HeartFull
+} from 'src/components/uiElements/icons';
 import styled from 'styled-components';
 
 import { SIZE } from '../avatar/types';

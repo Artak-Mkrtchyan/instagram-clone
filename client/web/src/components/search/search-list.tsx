@@ -1,5 +1,5 @@
-import { CloseIcon, User } from 'src/components/ui/elements/icons';
-import { List } from 'src/components/ui/elements/list/index';
+import { CloseIcon, User } from 'src/components/uiElements/icons';
+import { List } from 'src/components/uiElements/list/index';
 import styled from 'styled-components';
 
 export const Container = styled.div`

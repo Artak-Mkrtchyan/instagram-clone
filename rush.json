@@ -442,11 +442,11 @@
       "projectFolder": "client/web",
       "reviewCategory": "production"
     },
-    {
-      "packageName": "instagram-mobile",
-      "projectFolder": "client/mobile",
-      "reviewCategory": "production"
-    },
+    // {
+    //   "packageName": "instagram-mobile",
+    //   "projectFolder": "client/mobile",
+    //   "reviewCategory": "production"
+    // },
     {
       "packageName": "instagram-server",
       "projectFolder": "server",

@@ -1,12 +1,7 @@
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Search } from 'src/components/search/index';
-import {
-  Compass,
-  HeartEmpty,
-  Logo,
-  User,
-} from 'src/components/ui/elements/icons';
+import { Compass, HeartEmpty, Logo, User } from 'src/components/uiElements/icons';
 import { useInput } from 'src/hooks/useInput';
 import { ME } from 'src/SharedQueries';
 import styled from 'styled-components';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FatText } from 'src/components/fat-text';
 import { Loader } from 'src/components/loader';
 import { SquarePost } from 'src/components/square-post';

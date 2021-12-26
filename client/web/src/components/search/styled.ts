@@ -1,5 +1,5 @@
-import { Button } from 'src/components/ui/elements/button';
-import { Input } from 'src/components/ui/elements/input';
+import { Button } from 'src/components/uiElements/button';
+import { Input } from 'src/components/uiElements/input';
 import styled from 'styled-components';
 
 export const SearchInput = styled(Input)`

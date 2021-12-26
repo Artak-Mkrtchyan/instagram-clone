@@ -1,6 +1,5 @@
 import 'react-toastify/dist/ReactToastify.css';
 
-import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { isLoggedInVar } from 'src/apollo/Client';

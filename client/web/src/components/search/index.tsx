@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button } from 'src/components/ui/elements/button';
-import { CloseCircleIcon, SearchIcon } from 'src/components/ui/elements/icons';
+import { Button } from 'src/components/uiElements/button';
+import { CloseCircleIcon, SearchIcon } from 'src/components/uiElements/icons';
 import styled from 'styled-components';
 
 import { SearchList } from './search-list';
