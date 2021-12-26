@@ -1,4 +1,3 @@
-import React from 'react';
 import { Platform } from 'react-native';
 import { Logo } from 'src/components/Logo';
 import { MessagesLink } from 'src/components/MessagesLink';
@@ -13,11 +12,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { RouteProp, useRoute } from '@react-navigation/native';
 
 import {
-  BottomTabNavigationRoutes,
-  BottomTabsParamList,
-  MainNavigationRoutes,
-  RootNavigationParamList,
-  stackStyles,
+    BottomTabNavigationRoutes, BottomTabsParamList, MainNavigationRoutes, RootNavigationParamList,
+    stackStyles
 } from '../config';
 
 const BottomTabNavigator = createBottomTabNavigator<BottomTabsParamList>();

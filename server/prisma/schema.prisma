@@ -11,6 +11,7 @@ generator client {
 model User {
   id            String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
   avatar        String    @default(value: "https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png")
+  name          String
   username      String    @unique
   password      String
   email         String    @unique

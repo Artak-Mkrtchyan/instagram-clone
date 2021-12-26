@@ -11,6 +11,8 @@ export const resolvers = {
         where: {
           OR: [
             { username: { contains: args.term } },
+            { name: { contains: args.term } },
+            { email: { contains: args.term } },
             { firstName: { contains: args.term } },
             { lastName: { contains: args.term } },
           ],

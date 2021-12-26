@@ -6,6 +6,7 @@ export const resolvers = {
     createAccount: async (
       _: Record<string, unknown>,
       args: {
+        name: string;
         username: string;
         password: string;
         email: string;
@@ -16,6 +17,7 @@ export const resolvers = {
       context: Context
     ) => {
       const {
+        name,
         username,
         password,
         email,
@@ -35,6 +37,7 @@ export const resolvers = {
       await context.prisma.user.create({
         data: {
           username,
+          name,
           password: passwordHash,
           email,
           firstName,
