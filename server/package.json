@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "prisma": "prisma",
+    "build": "",
     "deploy": "prisma deploy",
     "generate": "prisma generate",
     "start": "prisma generate && nodemon --exec NODE_PATH=./ ts-node --project ./tsconfig.json --files src/server.ts",

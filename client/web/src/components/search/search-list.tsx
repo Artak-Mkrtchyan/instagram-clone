@@ -66,7 +66,10 @@ export const SearchList = (props: Props) => {
   const mockData = Array.from(Array(10).keys());
   return (
     <Container>
-      <List data={mockData} renderItem={(item) => <ListItem />} />
+      <List
+        data={mockData}
+        renderItem={(item, index) => <ListItem key={index} />}
+      />
     </Container>
   );
 };

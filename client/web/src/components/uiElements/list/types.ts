@@ -1,4 +1,4 @@
 export interface Props {
   data: any;
-  renderItem: (item) => JSX.Element;
+  renderItem: (item, index: string) => JSX.Element;
 }
