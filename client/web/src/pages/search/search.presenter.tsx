@@ -1,5 +1,5 @@
 import { FatText } from 'src/components/fat-text';
-import { Loader } from 'src/components/loader';
+import { Loader } from 'src/components/Loader';
 import { SquarePost } from 'src/components/square-post';
 import { UserCard } from 'src/components/user-card';
 

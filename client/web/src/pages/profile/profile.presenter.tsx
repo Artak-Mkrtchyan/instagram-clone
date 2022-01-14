@@ -4,7 +4,7 @@ import { SIZE } from 'src/components/avatar/types';
 import { Button } from 'src/components/button';
 import { FatText } from 'src/components/fat-text';
 import FollowButton from 'src/components/follow-button';
-import { Loader } from 'src/components/loader';
+import { Loader } from 'src/components/Loader';
 import { SquarePost } from 'src/components/square-post';
 
 import {

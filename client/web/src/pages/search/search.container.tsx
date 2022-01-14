@@ -1,6 +1,5 @@
+import { useSearch } from '@instcl/shared/lib/queries/search';
 import { withRouter } from 'react-router';
-
-
 
 import SearchPresenter from './search.presenter';
 

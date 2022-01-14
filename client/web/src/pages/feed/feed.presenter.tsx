@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { Loader } from 'src/components/loader';
+import { Loader } from 'src/components/Loader';
 import Post from 'src/components/post';
 
 import { Wrapper } from './feed.styles';
