@@ -24,7 +24,7 @@ export const Input: React.FC<Props> = ({
     placeholder={placeholder}
     required={required}
     value={value}
-    onChange={() => onChange}
+    onChange={(e) => onChange(e)}
     type={type}
   />
 );

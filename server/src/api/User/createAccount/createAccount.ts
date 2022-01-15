@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt';
 import { Context } from 'src/context';
+import { logger } from 'src/logger';
 
 export const resolvers = {
   Mutation: {
@@ -16,37 +17,43 @@ export const resolvers = {
       },
       context: Context
     ) => {
-      const {
-        name,
-        username,
-        password,
-        email,
-        firstName = '',
-        lastName = '',
-        bio = '',
-      } = args;
-      const exists = await context.prisma.user.findUnique({
-        where: { username },
-      });
-      if (exists) {
-        throw Error('This username / email is already taken');
+      try {
+        const {
+          name = '', // ????,
+          username,
+          password,
+          email,
+          firstName = '',
+          lastName = '',
+          bio = '',
+        } = args;
+        const exists = await context.prisma.user.findUnique({
+          where: { username },
+        });
+        if (exists) {
+          throw Error('This username / email is already taken');
+        }
+
+        const passwordHash = await bcrypt.hashSync(password, 10);
+
+        await context.prisma.user.create({
+          data: {
+            username,
+            name,
+            password: passwordHash,
+            email,
+            firstName,
+            lastName,
+            bio,
+          },
+        });
+
+        return true;
+      } catch (e) {
+        logger.error(e);
       }
 
-      const passwordHash = await bcrypt.hashSync(password, 10);
-
-      await context.prisma.user.create({
-        data: {
-          username,
-          name,
-          password: passwordHash,
-          email,
-          firstName,
-          lastName,
-          bio,
-        },
-      });
-
-      return true;
+      return;
     },
   },
 };
