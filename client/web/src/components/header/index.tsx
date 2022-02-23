@@ -1,7 +1,12 @@
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
-import { Search } from 'src/components/search/index';
-import { Compass, HeartEmpty, Logo, User } from 'src/components/uiElements/icons';
+import { Search } from 'src/components/blocks/search/index';
+import {
+  Compass,
+  HeartEmpty,
+  Logo,
+  User,
+} from 'src/components/uiElements/icons';
 import { useInput } from 'src/hooks/useInput';
 import { ME } from 'src/SharedQueries';
 import styled from 'styled-components';
@@ -51,10 +56,6 @@ const HeaderLink = styled(Link)`
 export const Header = withRouter(({ history }) => {
   const search = useInput('');
   const { data } = useQuery(ME);
-  const onSearchSubmit = (e) => {
-    e.preventDefault();
-    history.push(`/search?term=${search.value}`);
-  };
 
   return (
     <HeaderElement>
@@ -65,13 +66,11 @@ export const Header = withRouter(({ history }) => {
           </Link>
         </HeaderColumn>
         <HeaderColumn>
-          <form onSubmit={onSearchSubmit}>
-            <Search
-              value={search.value}
-              onChange={search.onChange}
-              placeholder="Search"
-            />
-          </form>
+          <Search
+            value={search.value}
+            onChange={search.onChange}
+            placeholder="Search"
+          />
         </HeaderColumn>
         <HeaderColumn>
           <HeaderLink to="/explore">

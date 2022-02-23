@@ -37,7 +37,6 @@ export const resolvers = {
       args: Record<string, unknown>,
       context: Context
     ) => context.prisma.post.count({ where: { user: { id } } }),
-
     followingCount: (
       { id }: { id: string },
       args: Record<string, unknown>,
@@ -49,7 +48,6 @@ export const resolvers = {
       args: Record<string, unknown>,
       context: Context
     ) => context.prisma.user.count({ where: { following: { none: { id } } } }),
-    fullName: (parent: any) => `${parent.firstName} ${parent.lastName}`,
     isFollowing: async ({ id }: { id: string }, _: any, context: Context) => {
       const { user } = context;
       try {

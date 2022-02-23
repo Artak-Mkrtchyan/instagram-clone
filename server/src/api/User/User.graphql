@@ -4,13 +4,13 @@ type User {
   name: String!
   username: String!
   email: String!
+  phoneNumber: Int
   password: String!
-  firstName: String
-  lastName: String
-  fullName: String
+  bio: String
+  website: String
+  gender: String
   isFollowing: Boolean!
   isSelf: Boolean!
-  bio: String
   following: [User!]!
   followers: [User!]!
   postsCount: Int!
@@ -20,7 +20,9 @@ type User {
   likes: [Like!]!
   comments: [Comment!]!
   channels: [Channel!]!
+  recentSearch: [User!]!
   loginSecret: String!
+  testingAccount: Boolean
   createdAt: String
   updatedAt: String
 }

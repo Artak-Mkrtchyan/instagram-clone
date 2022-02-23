@@ -8,8 +8,6 @@ export const resolvers = {
       args: {
         username: string;
         email: string;
-        firstName: string;
-        lastName: string;
         bio: string;
         avatar: string;
       },
@@ -17,7 +15,7 @@ export const resolvers = {
     ) => {
       isAuthenticated(context);
 
-      const { username, email, firstName, lastName, bio, avatar } = args;
+      const { username, email, bio, avatar } = args;
       const { user } = context;
 
       return context.prisma.user.update({
@@ -25,8 +23,6 @@ export const resolvers = {
         data: {
           username,
           email,
-          firstName,
-          lastName,
           bio,
           avatar,
         },

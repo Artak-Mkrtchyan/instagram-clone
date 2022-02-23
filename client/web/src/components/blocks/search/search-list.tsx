@@ -1,3 +1,4 @@
+import { SearchData, SearchUser } from '@instcl/shared';
 import { CloseIcon, User } from 'src/components/uiElements/icons';
 import { List } from 'src/components/uiElements/list/index';
 import styled from 'styled-components';
@@ -43,7 +44,7 @@ export const Div = styled.div`
   }
 `;
 
-export const ListItem: React.FC = () => (
+export const ListItem: React.FC = (props: any) => (
   <Div>
     <CircleWrapper>
       <Circle>
@@ -51,8 +52,8 @@ export const ListItem: React.FC = () => (
       </Circle>
     </CircleWrapper>
     <Text>
-      <div>Name</div>
-      <div>Description</div>
+      <div>{props.name}</div>
+      <div>{props.username}</div>
     </Text>
     <div>
       <CloseIcon />
@@ -60,15 +61,18 @@ export const ListItem: React.FC = () => (
   </Div>
 );
 
-export interface Props {}
+export interface Props {
+  searchedUser: SearchUser[];
+}
 
 export const SearchList = (props: Props) => {
-  const mockData = Array.from(Array(10).keys());
+  const data = props.searchedUser;
+
   return (
     <Container>
       <List
-        data={mockData}
-        renderItem={(item, index) => <ListItem key={index} />}
+        data={data}
+        renderItem={(item, index) => <ListItem {...item} key={index} />}
       />
     </Container>
   );

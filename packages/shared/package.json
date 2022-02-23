@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
+    "tsc": "tsc",
     "build": "rimraf ./lib/ && tsc",
-    "tsc": "tsc"
+    "build:watch": "tsc --watch"
   },
   "dependencies": {
     "@apollo/client": "^3.4.16"

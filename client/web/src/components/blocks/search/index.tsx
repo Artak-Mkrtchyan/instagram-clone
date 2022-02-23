@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import { useSearch, SearchData, SearchUser } from '@instcl/shared';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'src/components/uiElements/button';
 import { CloseCircleIcon, SearchIcon } from 'src/components/uiElements/icons';
+import { useInput } from 'src/hooks/useInput';
 import styled from 'styled-components';
 
 import { SearchList } from './search-list';
+import { SearchLoader } from './search-loader';
 import * as Styled from './styled';
 import { Props } from './types';
 
@@ -41,8 +44,21 @@ export const Dialog = styled.div`
   z-index: 1;
 `;
 
+// check and change Database fields
+
 export const Search: React.FC<Props> = (props: Props) => {
+  const term = useInput('');
   const [touched, setStatus] = useState<boolean>(false);
+  const [users, setUsers] = useState<SearchUser[]>();
+  const { search, loading } = useSearch();
+
+  const searchUser = async (e) => {
+    term.onChange(e);
+    let { data } = await search({ variables: { term: e.target.value } });
+    setUsers(data.searchUser);
+  };
+
+  console.log(users);
 
   return (
     <Styled.Wrapper>
@@ -50,11 +66,15 @@ export const Search: React.FC<Props> = (props: Props) => {
         {touched ? (
           <>
             <Styled.SearchInput
-              value=""
-              onChange={() => {}}
+              {...term}
+              onChange={(e) => searchUser(e)}
               placeholder="Search"
             />
-            <CloseCircleIcon onClick={() => setStatus(false)} />
+            {loading ? (
+              <SearchLoader />
+            ) : (
+              <CloseCircleIcon onClick={() => setStatus(false)} />
+            )}
           </>
         ) : (
           <Styled.SearchButton value="Search" onClick={() => setStatus(true)}>
@@ -73,7 +93,11 @@ export const Search: React.FC<Props> = (props: Props) => {
                   <h4>Recent</h4>
                   <ClearButton value="Clear All" onClick={() => {}} />
                 </Header>
-                <SearchList />
+                {users && users.length > 0 ? (
+                  <SearchList searchedUser={users} />
+                ) : (
+                  <SearchLoader />
+                )}
               </Styled.PopupContent>
             </Styled.PopupBody>
           </Styled.Popup>

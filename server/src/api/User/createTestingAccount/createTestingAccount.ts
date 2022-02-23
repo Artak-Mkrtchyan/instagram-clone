@@ -1,38 +1,32 @@
 import bcrypt from 'bcrypt';
 import { Context } from 'src/context';
 import { logger } from 'src/logger';
+import { fakeUser } from 'src/fakeDb/user';
 
 export const resolvers = {
   Mutation: {
-    createAccount: async (
+    createTestingAccount: async (
       _: Record<string, unknown>,
-      args: {
-        name: string;
-        username: string;
-        password: string;
-        email: string;
-        bio: string;
-      },
+      args: {},
       context: Context
     ) => {
       try {
-        const { name, username, password, email, bio = '' } = args;
+        let user = fakeUser();
         const exists = await context.prisma.user.findUnique({
-          where: { username },
+          where: { username: user.username },
         });
+
         if (exists) {
           throw Error('This username / email is already taken');
         }
 
-        const passwordHash = await bcrypt.hashSync(password, 10);
+        const passwordHash = await bcrypt.hashSync(user.password, 10);
 
         await context.prisma.user.create({
           data: {
-            username,
-            name,
+            ...user,
             password: passwordHash,
-            email,
-            bio,
+            testingAccount: true,
           },
         });
 

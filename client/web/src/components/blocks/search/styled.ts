@@ -27,6 +27,7 @@ export const Container = styled.div`
   min-width: 125px;
   position: relative;
   align-items: center;
+  z-index: 2;
 `;
 
 export const SearchButton = styled(Button)`

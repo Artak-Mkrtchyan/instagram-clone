@@ -5,13 +5,12 @@ import { LoginContainer } from 'src/pages/login/login.container';
 import { NotFound } from 'src/pages/not-found/index';
 import { ProfileContainer } from 'src/pages/profile/profile.container';
 import { RegistrationContainer } from 'src/pages/registration/registration.container';
-import { SearchContainer } from 'src/pages/search/search.container';
+// import { SearchContainer } from 'src/pages/search/search.container';
 
 const LoggedInRoutes = () => (
   <Switch>
     <Route exact path="/" component={FeedContainer} />
     <Route exact path="/explore" component={Explore} />
-    <Route exact path="/search" component={SearchContainer} />
     <Route exact path="/user/:username" component={ProfileContainer} />
     <Route path="*" component={NotFound} />
   </Switch>

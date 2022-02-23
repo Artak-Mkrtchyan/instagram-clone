@@ -9,27 +9,31 @@ generator client {
 }
 
 model User {
-  id            String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  avatar        String    @default(value: "https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png")
-  name          String
-  username      String    @unique
-  password      String
-  email         String    @unique
-  firstName     String    @default(value: "")
-  lastName      String
-  bio           String
-  following     User[]    @relation("UserFollows", fields: [followingIDs])
-  followingIDs  String[]  @db.Array(ObjectId)
-  followers     User[]    @relation("UserFollows", fields: [followedByIDs])
-  followedByIDs String[]  @db.Array(ObjectId)
-  posts         Post[]
-  likes         Like[]
-  comments      Comment[]
-  channels      Channel[]
-  loginSecret   String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  message       Message[]
+  id              String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  avatar          String    @default(value: "https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png")
+  name            String
+  username        String    @unique
+  password        String
+  email           String    @unique
+  gender          String?
+  phoneNumber     Int?
+  bio             String
+  following       User[]    @relation("UserFollows", fields: [followingIDs])
+  followingIDs    String[]  @db.Array(ObjectId)
+  followers       User[]    @relation("UserFollows", fields: [followedByIDs])
+  followedByIDs   String[]  @db.Array(ObjectId)
+  posts           Post[]
+  likes           Like[]
+  comments        Comment[]
+  channels        Channel[]
+  loginSecret     String?
+  recentSearch    User[]    @relation("RecentSearch", fields: [recentSearchIDs])
+  recentSearchIDs String[]  @db.Array(ObjectId)
+  predecessor     User[]    @relation("RecentSearch")
+  testingAccount  Boolean   @default(false)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  message         Message[]
 }
 
 model Post {

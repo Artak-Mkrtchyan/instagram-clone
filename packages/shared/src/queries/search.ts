@@ -1,21 +1,11 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useMutation } from '@apollo/client';
 
 export const SEARCH = gql`
-  query searchPost($term: String!) {
-    searchPost(term: $term) {
-      id
-      files {
-        url
-      }
-      likeCount
-      commentCount
-    }
+  mutation searchUser($term: String!) {
     searchUser(term: $term) {
       id
-      avatar
+      name
       username
-      isFollowing
-      isSelf
     }
   }
 `;
@@ -39,20 +29,17 @@ export interface SearchPost {
 
 export interface SearchData {
   searchUser: SearchUser[];
-  searchPost: SearchPost[];
 }
 
 export interface SearchVars {
   term: string;
 }
 
-export const useSearch = (term: string) => {
-  const { data, loading } = useQuery<SearchData, SearchVars>(SEARCH, {
-    skip: term === undefined,
-    variables: {
-      term,
-    },
-  });
+export const useSearch = () => {
+  const [search, { data, loading, error }] = useMutation<
+    SearchData,
+    SearchVars
+  >(SEARCH);
 
-  return { data, loading };
+  return { search, data, loading, error };
 };

@@ -6,7 +6,7 @@ import SearchPresenter from './search.presenter';
 export const SearchContainer = withRouter(({ location: { search } }) => {
   const [, term] = search.split('=');
 
-  const { data, loading } = useSearch(term);
+  // const { data, loading } = useSearch(term);
 
-  return <SearchPresenter searchTerm={term} loading={loading} data={data} />;
+  // return <SearchPresenter searchTerm={term} loading={loading} data={data} />;
 });

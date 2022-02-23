@@ -4,8 +4,8 @@ export const GET_USER_FRAGMENT = gql`
   fragment GetUser on User {
     id
     avatar
+    name
     username
-    fullName
     isFollowing
     isSelf
     bio

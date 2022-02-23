@@ -37,8 +37,8 @@ export const ProfilePresenter: React.FC<Props> = (props: Props) => {
       seeUser: {
         id,
         avatar,
+        name,
         username,
-        fullName,
         isFollowing,
         isSelf,
         bio,
@@ -77,7 +77,7 @@ export const ProfilePresenter: React.FC<Props> = (props: Props) => {
                 <FatText text={String(followingCount)} /> following
               </Count>
             </Counts>
-            <FullName text={fullName} />
+            <FullName text={username} />
             <Bio>{bio}</Bio>
           </HeaderColumn>
         </Header>
