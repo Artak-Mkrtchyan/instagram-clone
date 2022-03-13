@@ -1,0 +1,12 @@
+{
+  "files": {
+    "packages/shared/.rush/temp/shrinkwrap-deps.json": "f476352ec5221f89668503f9f0eb0bc3e0883ecf",
+    "packages/shared/package.json": "8f9dd9ee27b99bafe8bef3eabce4ea45f017749d",
+    "packages/shared/src/index.ts": "3cf1ef310b48e97cc14cb5a763b287e36ad07d84",
+    "packages/shared/src/queries/index.ts": "fb883f213693189dff61b3ec6fb9d683b89de1b1",
+    "packages/shared/src/queries/recent.ts": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "packages/shared/src/queries/search.ts": "c1a3ed897d1a784ce0d619feb9d9b90a9449062c",
+    "packages/shared/tsconfig.json": "c9442fe81c92371c7430db0cf6008b7f883fed77"
+  },
+  "arguments": "rimraf ./lib/ && tsc "
+}

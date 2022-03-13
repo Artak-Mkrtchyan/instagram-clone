@@ -7,7 +7,7 @@ importers:
   ../../client/web:
     specifiers:
       '@apollo/client': ^3.5.10
-      '@instcl/shared': workspace:^1.0.0
+      '@instcl/queries': workspace:^1.0.0
       '@testing-library/jest-dom': ^5.15.0
       '@testing-library/react': ^12.1.2
       '@testing-library/user-event': ^13.5.0
@@ -29,7 +29,7 @@ importers:
       typescript: ^4.4.4
     dependencies:
       '@apollo/client': 3.5.10_graphql@16.3.0+react@17.0.2
-      '@instcl/shared': link:../../packages/shared
+      '@instcl/queries': link:../../packages/queries
       graphql: 16.3.0
       mini-css-extract-plugin: 2.4.5
       react: 17.0.2
@@ -51,7 +51,7 @@ importers:
       '@types/react-router-dom': 5.3.3
       '@types/styled-components': 5.1.24
 
-  ../../packages/shared:
+  ../../packages/queries:
     specifiers:
       '@apollo/client': ^3.4.16
       '@types/node': ~17.0.4
@@ -6298,7 +6298,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      cssnano: 5.1.3_postcss@8.4.8
+      cssnano: 5.1.4_postcss@8.4.8
       jest-worker: 27.5.1
       postcss: 8.4.8
       schema-utils: 4.0.0
@@ -6452,10 +6452,10 @@ packages:
     resolution: { integrity: sha1-xtJnJjKi5cg+AT5oZKQs6N79IK4= }
     dev: false
 
-  /cssnano-preset-default/5.2.3_postcss@8.4.8:
+  /cssnano-preset-default/5.2.4_postcss@8.4.8:
     resolution:
       {
-        integrity: sha512-e4pzD/FnsvRywKO3i2Ti4jgAcJO5MhQPudrex92HXAJoMyQfS8lZHIzzC1yZ1t+d2zdkLXFY1sHdsZaT7lKoCQ==,
+        integrity: sha512-w1Gg8xsebln6/axZ6qDFQHuglrGfbIHOIx0g4y9+etRlRab8CGpSpe6UMsrgJe4zhCaJ0LwLmc+PhdLRTwnhIA==,
       }
     engines: { node: ^10 || ^12 || >=14.0 }
     peerDependencies:
@@ -6471,7 +6471,7 @@ packages:
       postcss-discard-duplicates: 5.1.0_postcss@8.4.8
       postcss-discard-empty: 5.1.1_postcss@8.4.8
       postcss-discard-overridden: 5.1.0_postcss@8.4.8
-      postcss-merge-longhand: 5.1.1_postcss@8.4.8
+      postcss-merge-longhand: 5.1.2_postcss@8.4.8
       postcss-merge-rules: 5.1.0_postcss@8.4.8
       postcss-minify-font-values: 5.1.0_postcss@8.4.8
       postcss-minify-gradients: 5.1.0_postcss@8.4.8
@@ -6505,16 +6505,16 @@ packages:
       postcss: 8.4.8
     dev: false
 
-  /cssnano/5.1.3_postcss@8.4.8:
+  /cssnano/5.1.4_postcss@8.4.8:
     resolution:
       {
-        integrity: sha512-bdf+sY2w4XV+F5LOCEd7fWnSeMeKBO4lKgoAKVWZOSTR7CmWEk1UW/s9ibTMMnsTsinBmIdgZs755sAGa1eoXQ==,
+        integrity: sha512-hbfhVZreEPyzl+NbvRsjNo54JOX80b+j6nqG2biLVLaZHJEiqGyMh4xDGHtwhUKd5p59mj2GlDqlUBwJUuIu5A==,
       }
     engines: { node: ^10 || ^12 || >=14.0 }
     peerDependencies:
       postcss: ^8.2.15
     dependencies:
-      cssnano-preset-default: 5.2.3_postcss@8.4.8
+      cssnano-preset-default: 5.2.4_postcss@8.4.8
       lilconfig: 2.0.4
       postcss: 8.4.8
       yaml: 1.10.2
@@ -12475,10 +12475,10 @@ packages:
       postcss: 8.4.8
     dev: false
 
-  /postcss-merge-longhand/5.1.1_postcss@8.4.8:
+  /postcss-merge-longhand/5.1.2_postcss@8.4.8:
     resolution:
       {
-        integrity: sha512-JLtqAY1LvxiD2aej6hcAk/TkXvEPM+Gs1aOkOIZub2MDEiB5NMtpMe/Ir2seIMMM245bsuHggzIhQBv6qFBm4A==,
+        integrity: sha512-18/bp9DZnY1ai9RlahOfLBbmIUKfKFPASxRCiZ1vlpZqWPCn8qWPFlEozqmWL+kBtcEQmG8W9YqGCstDImvp/Q==,
       }
     engines: { node: ^10 || ^12 || >=14.0 }
     peerDependencies:

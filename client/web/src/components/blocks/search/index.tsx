@@ -4,7 +4,7 @@ import { CloseCircleIcon, SearchIcon } from 'src/components/uiElements/icons';
 import { useInput } from 'src/hooks/useInput';
 import styled from 'styled-components';
 
-import { SearchUser, useSearch } from '@instcl/shared';
+import { SearchUser, useSearch } from '@instcl/queries';
 
 import { SearchList } from './search-list';
 import { SearchLoader } from './search-loader';

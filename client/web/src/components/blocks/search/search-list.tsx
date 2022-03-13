@@ -2,7 +2,7 @@ import { CloseIcon, User } from 'src/components/uiElements/icons';
 import { List } from 'src/components/uiElements/list/index';
 import styled from 'styled-components';
 
-import { SearchUser } from '@instcl/shared';
+import { SearchUser } from '@instcl/queries';
 
 export const Container = styled.div`
   margin: 8px 0;
