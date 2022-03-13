@@ -9,35 +9,37 @@ generator client {
 }
 
 model User {
-  id              String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  avatar          String    @default(value: "https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png")
-  name            String
-  username        String    @unique
-  password        String
-  email           String    @unique
-  gender          String?
-  phoneNumber     Int?
-  bio             String
-  following       User[]    @relation("UserFollows", fields: [followingIDs])
-  followingIDs    String[]  @db.Array(ObjectId)
-  followers       User[]    @relation("UserFollows", fields: [followedByIDs])
-  followedByIDs   String[]  @db.Array(ObjectId)
-  posts           Post[]
-  likes           Like[]
-  comments        Comment[]
-  channels        Channel[]
-  loginSecret     String?
-  recentSearch    User[]    @relation("RecentSearch", fields: [recentSearchIDs])
-  recentSearchIDs String[]  @db.Array(ObjectId)
-  predecessor     User[]    @relation("RecentSearch")
-  testingAccount  Boolean   @default(false)
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
-  message         Message[]
+  id                     String    @id @default(auto()) @map("_id") @db.ObjectId
+  avatar                 String    @default(value: "https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png")
+  name                   String
+  username               String    @unique
+  password               String
+  email                  String    @unique
+  gender                 String?
+  phoneNumber            Int?
+  bio                    String
+  following              User[]    @relation("UserFollows", fields: [followingIDs], references: [id])
+  followingIDs           String[]  @db.ObjectId
+  followers              User[]    @relation("UserFollows", fields: [followedByIDs], references: [id])
+  followedByIDs          String[]  @db.ObjectId
+  posts                  Post[]
+  likes                  Like[]
+  comments               Comment[]
+  channelIDs             String[]  @db.ObjectId
+  channels               Channel[] @relation(fields: [channelIDs], references: [id])
+  loginSecret            String?
+  recentSearchedUsers    User[]    @relation("SearcherUsers", fields: [recentSearchedUsersIDs], references: [id])
+  recentSearchedUsersIDs String[]  @db.ObjectId
+  searchers              User[]    @relation("SearcherUsers", fields: [searchersIDs], references: [id])
+  searchersIDs           String[]  @db.ObjectId
+  testingAccount         Boolean   @default(false)
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+  message                Message[]
 }
 
 model Post {
-  id        String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
   location  String
   caption   String
   user      User      @relation(fields: [authorId], references: [id])
@@ -50,7 +52,7 @@ model Post {
 }
 
 model Like {
-  id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   user      User     @relation(fields: [authorId], references: [id])
   post      Post     @relation(fields: [postId], references: [id])
   createdAt DateTime @default(now())
@@ -60,7 +62,7 @@ model Like {
 }
 
 model Comment {
-  id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   text      String
   user      User     @relation(fields: [userId], references: [id])
   post      Post     @relation(fields: [postId], references: [id])
@@ -71,7 +73,7 @@ model Comment {
 }
 
 model File {
-  id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   url       String
   post      Post     @relation(fields: [postId], references: [id])
   createdAt DateTime @default(now())
@@ -80,15 +82,16 @@ model File {
 }
 
 model Channel {
-  id           String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  participants User[]
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  userIDs      String[]  @db.ObjectId
+  participants User[]    @relation(fields: [userIDs], references: [id])
   messages     Message[]
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 }
 
 model Message {
-  id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   text      String
   user      User     @relation(fields: [userId], references: [id])
   userId    String   @db.ObjectId

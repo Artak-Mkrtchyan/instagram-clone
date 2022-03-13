@@ -29,7 +29,6 @@ export const resolvers = {
           orderBy: { createdAt: 'desc' },
         });
       } catch (e) {
-        console.error(e);
         return null;
       }
     },

@@ -1,9 +1,10 @@
-import { useSearch, SearchData, SearchUser } from '@instcl/shared';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'src/components/uiElements/button';
 import { CloseCircleIcon, SearchIcon } from 'src/components/uiElements/icons';
 import { useInput } from 'src/hooks/useInput';
 import styled from 'styled-components';
+
+import { SearchUser, useSearch } from '@instcl/shared';
 
 import { SearchList } from './search-list';
 import { SearchLoader } from './search-loader';
@@ -44,8 +45,6 @@ export const Dialog = styled.div`
   z-index: 1;
 `;
 
-// check and change Database fields
-
 export const Search: React.FC<Props> = (props: Props) => {
   const term = useInput('');
   const [touched, setStatus] = useState<boolean>(false);
@@ -54,8 +53,11 @@ export const Search: React.FC<Props> = (props: Props) => {
 
   const searchUser = async (e) => {
     term.onChange(e);
-    let { data } = await search({ variables: { term: e.target.value } });
-    setUsers(data.searchUser);
+    if (e.target.value) {
+      let { data } = await search({ variables: { term: e.target.value } });
+
+      setUsers(data.searchUser);
+    }
   };
 
   console.log(users);

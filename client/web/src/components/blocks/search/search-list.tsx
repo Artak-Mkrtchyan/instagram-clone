@@ -1,7 +1,8 @@
-import { SearchData, SearchUser } from '@instcl/shared';
 import { CloseIcon, User } from 'src/components/uiElements/icons';
 import { List } from 'src/components/uiElements/list/index';
 import styled from 'styled-components';
+
+import { SearchUser } from '@instcl/shared';
 
 export const Container = styled.div`
   margin: 8px 0;

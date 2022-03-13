@@ -1,5 +1,4 @@
 import { Context } from 'src/context';
-import { logger } from 'src/logger';
 import { isAuthenticated } from 'src/middlewares';
 
 export const resolvers = {
@@ -19,32 +18,35 @@ export const resolvers = {
               { name: { contains: args.term } },
               { email: { contains: args.term } },
             ],
+            AND: {
+              id: {
+                not: context.user.id,
+              },
+            },
           },
         });
-        console.log('res', context.user.id);
+
         await context.prisma.user.update({
           where: {
             id: context.user.id,
           },
           data: {
-            recentSearch: {
-              connect: { id: '61eae48abec71cd87a5c66b6' },
+            recentSearchedUsers: {
+              connect: [...users.map((user) => ({ id: user.id }))],
             },
           },
         });
 
-        return users;
+        return users || [];
       }
 
-      const recentUsers = await context.prisma.user
-        .findUnique({
-          where: {
-            id: context.user.id,
-          },
-        })
-        .recentSearch();
-      console.log(recentUsers);
-      return recentUsers || [];
+      const recentSearchedUsers = await context.prisma.user.findUnique({
+        where: {
+          id: context.user.id,
+        },
+      });
+
+      return recentSearchedUsers || [];
     },
   },
 };

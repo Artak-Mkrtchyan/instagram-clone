@@ -48,7 +48,7 @@ export interface SearchVars {
 
 export const useSearch = (term: string) => {
   const { data, loading } = useQuery<SearchData, SearchVars>(SEARCH, {
-    skip: term === undefined,
+    skip: !!term,
     variables: {
       term,
     },

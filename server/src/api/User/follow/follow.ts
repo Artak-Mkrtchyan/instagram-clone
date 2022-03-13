@@ -1,6 +1,6 @@
-import { isAuthenticated } from 'src/middlewares';
 import { Context } from 'src/context';
 import { logger } from 'src/logger';
+import { isAuthenticated } from 'src/middlewares';
 
 export const resolvers = {
   Mutation: {

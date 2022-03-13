@@ -20,7 +20,7 @@ type User {
   likes: [Like!]!
   comments: [Comment!]!
   channels: [Channel!]!
-  recentSearch: [User!]!
+  recentSearchedUsers: [User!]!
   loginSecret: String!
   testingAccount: Boolean
   createdAt: String

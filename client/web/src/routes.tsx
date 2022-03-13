@@ -5,6 +5,11 @@ import { LoginContainer } from 'src/pages/login/login.container';
 import { NotFound } from 'src/pages/not-found/index';
 import { ProfileContainer } from 'src/pages/profile/profile.container';
 import { RegistrationContainer } from 'src/pages/registration/registration.container';
+
+import { useQuery } from '@apollo/client';
+
+import { ME } from './SharedQueries';
+
 // import { SearchContainer } from 'src/pages/search/search.container';
 
 const LoggedInRoutes = () => (
@@ -25,5 +30,11 @@ const LoggedOutRoutes = () => (
 );
 
 export const AppRouter = ({ isLoggedIn }) => {
-  return isLoggedIn ? <LoggedInRoutes /> : <LoggedOutRoutes />;
+  const { data } = useQuery(ME);
+
+  if (isLoggedIn && data) {
+    return <LoggedInRoutes />;
+  } else {
+    return <LoggedOutRoutes />;
+  }
 };

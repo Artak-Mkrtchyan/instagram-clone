@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import { Context } from 'src/context';
-import { logger } from 'src/logger';
 import { fakeUser } from 'src/fakeDb/user';
+import { logger } from 'src/logger';
 
 export const resolvers = {
   Mutation: {

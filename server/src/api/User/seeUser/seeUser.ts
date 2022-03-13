@@ -11,8 +11,8 @@ export const resolvers = {
       const { username } = args;
 
       try {
-        const user = await context.prisma.user.findUnique({
-          where: { username },
+        const user = await context.prisma.user.findFirst({
+          where: { name: username },
         });
 
         return user;

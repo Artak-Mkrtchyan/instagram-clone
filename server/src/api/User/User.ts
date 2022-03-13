@@ -17,6 +17,12 @@ export const resolvers = {
       args: Record<string, unknown>,
       context: Context
     ) => context.prisma.user.findUnique({ where: { id } }).followers(),
+    recentSearchedUsers: (
+      { id }: { id: string },
+      args: Record<string, unknown>,
+      context: Context
+    ) =>
+      context.prisma.user.findUnique({ where: { id } }).recentSearchedUsers(),
     likes: (
       { id }: { id: string },
       args: Record<string, unknown>,
