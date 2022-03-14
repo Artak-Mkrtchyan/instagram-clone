@@ -4,14 +4,6 @@
   "pnpmVersion": "6.7.1",
   "pnpmOptions": { "strictPeerDependencies": false, "useWorkspaces": true },
   "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0",
-  "gitPolicy": {},
-  "repository": {},
-  "eventHooks": {
-    "preRushInstall": [],
-    "postRushInstall": [],
-    "preRushBuild": [],
-    "postRushBuild": []
-  },
   "variants": [],
   "projects": [
     {
@@ -33,6 +25,10 @@
       "packageName": "@instcl/queries",
       "projectFolder": "packages/queries",
       "reviewCategory": "production"
+    },
+    {
+      "packageName": "@instcl/models",
+      "projectFolder": "packages/models"
     }
   ]
 }

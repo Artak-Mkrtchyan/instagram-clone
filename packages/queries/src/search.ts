@@ -1,4 +1,5 @@
 import { gql, useMutation } from '@apollo/client';
+import { SearchUserMutationArgs } from '@instcl/models/lib/mutations';
 
 export const SEARCH = gql`
   mutation searchUser($term: String!) {
@@ -31,14 +32,10 @@ export interface SearchData {
   searchUser: SearchUser[];
 }
 
-export interface SearchVars {
-  term: string;
-}
-
 export const useSearch = () => {
   const [search, { data, loading, error }] = useMutation<
     SearchData,
-    SearchVars
+    SearchUserMutationArgs
   >(SEARCH);
 
   return { search, data, loading, error };

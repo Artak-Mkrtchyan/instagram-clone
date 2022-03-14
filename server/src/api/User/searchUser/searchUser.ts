@@ -1,13 +1,18 @@
 import { Context } from 'src/context';
 import { isAuthenticated } from 'src/middlewares';
 
+import {
+  SearchUserMutationArgs,
+  SearchUserMutationResponseData,
+} from '@instcl/models/lib/mutations';
+
 export const resolvers = {
   Mutation: {
     searchUser: async (
       _: Record<string, unknown>,
-      args: { term: string },
+      args: SearchUserMutationArgs,
       context: Context
-    ) => {
+    ): SearchUserMutationResponseData => {
       isAuthenticated(context);
 
       if (args.term.length > 0) {

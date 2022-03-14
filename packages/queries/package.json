@@ -10,7 +10,8 @@
     "build:watch": "tsc --watch"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.16"
+    "@apollo/client": "^3.4.16",
+    "@instcl/models": "workspace:^1.0.0"
   },
   "devDependencies": {
     "@types/node": "~17.0.4",

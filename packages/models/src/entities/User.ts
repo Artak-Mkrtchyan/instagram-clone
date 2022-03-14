@@ -1,0 +1,32 @@
+import { Channel } from './Channel';
+import { Like } from './Like';
+import { Post } from './Post';
+
+export type User = {
+  id: string;
+  avatar: String;
+  name: String;
+  username: String;
+  email: String;
+  phoneNumber: Number;
+  password: String;
+  bio: String;
+  website: String;
+  gender: String;
+  isFollowing: Boolean;
+  isSelf: Boolean;
+  following: [User];
+  followers: [User];
+  postsCount: Number;
+  followingCount: Number;
+  followersCount: Number;
+  posts: Post[];
+  likes: Like[];
+  comments: Comment[];
+  channels: Channel[];
+  recentSearchedUsers: User[];
+  loginSecret: String;
+  testingAccount: Boolean;
+  createdAt: String;
+  updatedAt: String;
+};
